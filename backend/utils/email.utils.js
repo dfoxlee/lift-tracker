@@ -16,7 +16,11 @@ const createTransporter = () => {
 };
 
 export const emailConfirmationToUser = async ({ confirmationToken, email }) => {
-   const confirmationUrl = `${process.env.FRONTEND_URL}/email-confirmed/${confirmationToken}`;
+   const confirmationUrl = `${
+      process.env.ENVIRONMENT === "PRODUCTION"
+         ? process.env.FRONTEND_URL
+         : "http://localhost:5173"
+   }/email-confirmed/${confirmationToken}`;
 
    const mailOptions = {
       from: `"Lift Tracker" <${process.env.EMAIL_USER}>`,
