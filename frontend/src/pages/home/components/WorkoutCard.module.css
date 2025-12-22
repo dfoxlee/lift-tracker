@@ -1,0 +1,47 @@
+.container {
+   display: grid;
+   grid-template-columns: 3fr 1fr;
+   padding: 20px;
+   box-shadow: 0 0 10px 0 var(--neutral-grey);
+   border-radius: 10px;
+   width: 100%;
+   align-items: center;
+}
+
+.infoWrapper {
+   display: flex;
+   flex-direction: column;
+   min-width: 150px;
+}
+
+.btnsWrapper {
+   display: flex;
+   justify-content: center;
+   gap: 10px;
+   min-width: 200px;
+}
+
+.workoutName {
+   text-wrap: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+@media only screen and (max-width: 500px) {
+   .container {
+      grid-template-columns: 1fr;
+      row-gap: 15px;
+      justify-items: center;
+      align-items: center;
+      width: auto;
+   }
+
+   .workoutName {
+      text-align: center;
+      text-wrap: wrap;
+   }
+   
+   .infoWrapper {
+      align-items: center;
+   }
+}

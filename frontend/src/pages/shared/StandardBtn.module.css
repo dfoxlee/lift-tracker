@@ -1,0 +1,70 @@
+.btn {
+   font-size: 18px;
+   padding: 5px 15px;
+   border-radius: 5px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 5px;
+}
+
+.filledDanger {
+   background-color: var(--danger);
+   color: var(--secondary);
+   font-weight: 500;
+}
+
+.filledWarning {
+   background-color: var(--warning);
+   color: var(--secondary);
+}
+
+.filledSuccess {
+   background-color: var(--success);
+   color: var(--secondary);
+}
+
+.filledGrey {
+   background-color: var(--neutral-grey);
+   color: var(--secondary);
+}
+
+.filled {
+   background-color: var(--primary);
+   color: var(--secondary);
+}
+
+.danger {
+   border: 1px solid var(--danger);
+   color: var(--danger);
+   background: none;
+}
+
+.warning {
+   border: 1px solid var(--warning);
+   color: var(--warning);
+   background: none;
+}
+
+.success {
+   border: 1px solid var(--success);
+   color: var(--success);
+   background: none;
+}
+
+.grey {
+   border: 1px solid var(--neutral-grey);
+   color: var(--neutral-grey);
+   background: none;
+}
+
+.outlined {
+   border: 1px solid var(--primary);
+   color: var(--primary);
+   background: none;
+}
+
+.disabled {
+   opacity: 0.5;
+   pointer-events: none;
+}

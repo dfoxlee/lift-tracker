@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  lift-tracker-db:
+    image: mysql:latest
+    container_name: lift-tracker-container
+    environment:
+      MYSQL_ROOT_PASSWORD: admin-1234
+      MYSQL_DATABASE: lift_tracker
+    volumes:
+      - lift-tracker-volume:/var/lib/mysql
+    ports:
+      - "3307:3306"
+volumes:
+  lift-tracker-volume:
+    external: true

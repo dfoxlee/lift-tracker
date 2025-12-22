@@ -1,0 +1,38 @@
+.title {
+   font-size: 60px;
+   text-align: center;
+   color: var(--primary);
+   margin-top: 100px;
+}
+
+.messagesWrapper {
+   margin-top: 50px;
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   align-items: center;
+   justify-content: center;
+}
+
+.message {
+   font-size: 20px;
+   text-align: center;
+   color: var(--text-color);
+}
+
+.linkWrapper {
+   margin-top: 30px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+.returnLink {
+   font-size: 18px;
+   border: 1px solid var(--primary);
+   padding: 5px 15px;
+   border-radius: 5px;
+   color: var(--primary);
+   text-decoration: none;
+}

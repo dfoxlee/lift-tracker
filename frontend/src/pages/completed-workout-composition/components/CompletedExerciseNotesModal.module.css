@@ -1,0 +1,47 @@
+.container {
+   position: fixed;
+   inset: 0;
+   background-color: rgba(0, 0, 0, 0.8);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   z-index: 100;
+}
+
+.wrapper {
+   padding: 20px;
+   width: 90vw;
+   max-width: 400px;
+   border-radius: 10px;
+   padding: 20px;
+   border: 1px solid var(--primary);
+   background-color: var(--secondary);
+}
+
+.title {
+   text-align: center;
+}
+
+.noteInput {
+   width: 100%;
+   background: none;
+   border: 1px solid white;
+   color: white;
+   margin-top: 10px;
+   font-size: 18px;
+   padding: 5px 10px;
+   border-radius: 5px;
+}
+
+.btnWrapper {
+   display: flex;
+   justify-content: center;
+   margin-top: 15px;
+   gap: 20px;
+}
+
+.latestExerciseNote {
+   margin-top: 10px;
+   color: var(--neutral-grey);
+   font-size: 16px;
+}

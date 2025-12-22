@@ -1,0 +1,156 @@
+.container {
+   position: fixed;
+   inset: 0;
+   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      var(--primary);
+   z-index: 20;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.wrapper {
+   overflow-x: hidden;
+   overflow-y: auto;
+   background-color: var(--secondary);
+   max-width: 600px;
+   height: 90vh;
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0 0 10px 0 var(--secondary);
+}
+
+.headerWrapper {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.title {
+   color: white;
+   text-align: center;
+}
+
+.unitPreferenceBtn {
+   margin: 15px auto 0;
+   display: block;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+}
+
+.unitPreferenceText {
+   color: white;
+}
+
+.unitPreferenceIcon {
+   font-size: 32px;
+   color: var(--primary);
+}
+
+.changeAccountInfoWrapper {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: start;
+   gap: 30px 50px;
+   padding: 0 20px;
+}
+
+.changePasswordTitle {
+   text-align: center;
+   margin-top: 30px;
+}
+
+.formWrapper {
+   margin: 5px auto 0;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+   max-width: 300px;
+}
+
+.inputWrapper {
+   width: 100%;
+}
+
+.inputLabel {
+   color: var(--neutral-grey);
+   font-size: 14px;
+}
+
+.changePasswordInput,
+.changeEmailInput,
+.confirmDeleteInput {
+   width: 100%;
+   background: none;
+   border: 1px solid white;
+   padding: 5px 10px;
+   border-radius: 5px;
+   color: white;
+   margin-top: 5px;
+}
+
+.updatePasswordBtn,
+.updateEmailBtn {
+   margin-top: 15px;
+   color: var(--primary);
+   border: 1px solid var(--primary);
+}
+
+.updatePasswordBtn,
+.updateEmailBtn,
+.confirmDeleteBtn {
+   padding: 5px 10px;
+   border-radius: 5px;
+   cursor: pointer;
+}
+
+.confirmDeleteBtn {
+   background-color: var(--danger);
+   color: var(--secondary);
+   font-weight: 500;
+}
+
+.changeEmailWrapper {
+   margin-top: 30px;
+}
+
+.changeEmailTitle {
+   text-align: center;
+}
+
+.deleteAccountTextWrapper {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 3px;
+}
+
+.deleteAccountWrapper {
+   margin-top: 30px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 20px;
+}
+
+.btnsWrapper {
+   margin-top: 15px;
+   display: flex;
+   gap: 10px;
+   justify-content: center;
+   align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+   .wrapper {
+      width: 100vw;
+      height: 100vh;
+   }
+}

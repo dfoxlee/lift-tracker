@@ -1,0 +1,61 @@
+.container {
+   width: 90vw;
+   max-width: 600px;
+   margin: 0 auto;
+   padding-bottom: 30px;
+}
+
+.headerBtnsWrapper {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-top: 20px;
+}
+
+.workoutName {
+   width: 100%;
+   margin-top: 20px;
+   padding: 10px;
+   font-size: 24px;
+   border: 1px solid white;
+   border-radius: 5px;
+   color: white;
+   background: none;
+   text-align: center;
+}
+
+.workoutViewToggleBtn {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+   cursor: pointer;
+   border-radius: 5px;
+   margin: 10px auto;
+   border: 1px solid var(--info);
+   padding: 5px 10px;
+}
+
+.workoutViewToggleIcon {
+   color: var(--info);
+   font-size: 24px;
+}
+
+.workoutViewToggleText {
+   color: var(--neutral-grey);
+}
+
+.workoutViewToggleTextActive {
+   color: var(--info);
+}
+
+.cancelWorkoutCompositionBtn,
+.saveWorkoutCompositionBtn {
+   padding: 5px 20px;
+   border-radius: 5px;
+}
+
+.cancelWorkoutCompositionBtn {
+   border: 1px solid var(--primary);
+   color: var(--primary);
+}

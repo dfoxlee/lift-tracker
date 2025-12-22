@@ -1,0 +1,21 @@
+.container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 10px 30px;
+   flex-wrap: wrap;
+   box-shadow: 0 0 10px 0 var(--neutral-grey);
+   padding: 10px 30px;
+   border-radius: 10px;
+}
+
+.workoutName {
+   flex: 1 0 auto;
+   text-align: center;
+}
+
+.btnWrapper {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+}

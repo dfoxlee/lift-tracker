@@ -1,0 +1,65 @@
+.exerciseOptionBtnsWrapper {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   margin-top: 10px;
+}
+
+.exerciseNavigationWrapper {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 15px;
+   gap: 10px 30px;
+   flex-wrap: wrap;
+}
+
+.currentExercise {
+   font-size: 18px;
+   color: var(--neutral-grey);
+}
+
+.exerciseSelector {
+   display: flex;
+   width: 200px;
+   padding: 5px 10px;
+   font-size: 18px;
+   border: 1px solid var(--info);
+   border-radius: 5px;
+   background: none;
+   color: var(--info);
+   text-align: center;
+}
+
+.exerciseNameInput {
+   width: 80%;
+   padding: 8px 10px;
+   font-size: 18px;
+   border: 1px solid white;
+   border-radius: 5px;
+   background: none;
+   color: white;
+   text-align: center;
+   margin: 30px auto 0;
+   display: block;
+}
+
+.setsGridWrapper {
+   display: grid;
+   grid-template-columns: 1fr 3fr 1fr;
+   gap: 12px;
+   align-items: center;
+   margin-top: 30px;
+}
+
+.setsGridHeader {
+   font-size: 14px;
+   text-align: center;
+   font-weight: 500;
+}
+
+.addSetBtnWrapper {
+   margin-top: 20px;
+   display: flex;
+   justify-content: center;
+}

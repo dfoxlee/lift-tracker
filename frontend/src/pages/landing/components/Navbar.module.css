@@ -1,0 +1,38 @@
+.wrapper {
+   width: 90vw;
+   max-width: 1200px;
+   padding: 15px 0;
+   margin: 0 auto;
+   display: grid;
+   grid-template-columns: 1fr auto;
+}
+
+.authBtnsWrapper {
+   display: flex;
+   gap: 10px;
+   position: relative;
+}
+
+.loginBtn,
+.signUpBtn {
+   padding: 5px 20px;
+   border-radius: 5px;
+}
+
+.loginBtn {
+   background-color: var(--primary);
+}
+
+.signUpBtn {
+   border: 1px solid var(--primary);
+   color: var(--primary);
+}
+
+@media only screen and (max-width: 600px) {
+   .wrapper {
+      grid-template-columns: auto;
+      align-items: center;
+      justify-items: center;
+      gap: 10px 0;
+   }
+}

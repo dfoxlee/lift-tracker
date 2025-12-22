@@ -1,0 +1,68 @@
+.container {
+   position: fixed;
+   inset: 0;
+   background-color: rgba(0, 0, 0, 0.8);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 100;
+}
+
+.wrapper {
+   /* border: 1px solid var(--primary); */
+   padding: 20px;
+   border-radius: 20px;
+   box-shadow: 0 0 10px 0 var(--neutral-grey);
+   width: 90vw;
+   max-width: 500px;
+   max-height: 80vh;
+   overflow-y: auto;
+   background-color: var(--secondary);
+}
+
+.workoutName {
+   text-align: center;
+   margin-top: 10px;
+   font-size: 32px;
+}
+
+.exerciseSetsGrid {
+   display: grid;
+   grid-template-columns: 1fr 3fr 4fr;
+   gap: 10px 20px;
+   margin-top: 10px;
+   margin-bottom: 20px;
+   justify-items: center;
+   align-items: center;
+}
+
+.exercisesWrapper {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 30px;
+   margin-top: 20px;
+}
+
+.exerciseCard {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.exerciseName {
+   color: var(--neutral-grey);
+   text-align: center;
+}
+
+.setTitle {
+   font-size: 14px;
+   font-weight: 500;
+   color: var(--primary);
+}
+
+.latestExerciseNote {
+   font-size: 16px;
+   color: var(--neutral-grey);
+   margin-top: 5px;
+}

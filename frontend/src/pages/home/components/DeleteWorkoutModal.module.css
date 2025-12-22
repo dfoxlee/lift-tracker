@@ -1,0 +1,29 @@
+.container {
+   position: fixed;
+   inset: 0;
+   background-color: rgba(0, 0, 0, 0.8);
+   display: grid;
+   place-items: center;
+}
+
+.wrapper {
+   background-color: var(--secondary);
+   width: 90vw;
+   max-width: 300px;
+   padding: 20px;
+   border-radius: 20px;
+   border: 1px solid var(--primary);
+   box-shadow: 0 0 10px 0 var(--neutral-grey);
+}
+
+.confirmationText {
+   text-align: center;
+}
+
+.btnsWrapper {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+   margin-top: 20px;
+}

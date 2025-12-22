@@ -1,0 +1,40 @@
+.container {
+   width: 90vw;
+   max-width: 600px;
+   margin: 0 auto;
+}
+
+.headerWrapper {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 10px 0;
+}
+
+.workoutName {
+   text-align: center;
+}
+
+.viewToggleBtn {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 8px;
+   margin: 0 auto;
+   padding: 5px 10px;
+   border: 1px solid var(--info);
+   border-radius: 5px;
+}
+
+.viewToggleText {
+   color: var(--neutral-grey);
+}
+
+.viewToggleTextActive {
+   color: var(--info);
+}
+
+.viewToggleIcon {
+   color: var(--info);
+   font-size: 24px;
+}

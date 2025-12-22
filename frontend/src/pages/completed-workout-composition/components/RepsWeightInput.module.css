@@ -1,0 +1,59 @@
+.container {
+   display: grid;
+   grid-template-columns: auto auto auto;
+   justify-items: center;
+   align-items: center;
+   gap: 0 5px;
+}
+
+.separator {
+   font-size: 18px;
+   color: white;
+}
+
+.repsInput,
+.weightInput {
+   background: none;
+   border: 1px solid white;
+   color: white;
+   text-align: center;
+   border-radius: 5px;
+   padding: 5px 10px;
+   /* Remove increment/decrement controls */
+   -moz-appearance: textfield;
+
+   /* For WebKit browsers (Chrome, Safari, Edge) */
+   &::-webkit-outer-spin-button,
+   &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+   }
+}
+
+.inputWrapper {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 5px;
+}
+
+.repsInput {
+   width: 50px;
+}
+
+.weightIncrementWrapper,
+.weightDecrementWrapper {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+}
+
+.weightInput {
+   width: 90px;
+}
+
+.repsLabel,
+.weightLabel {
+   font-size: 14px;
+}

@@ -1,0 +1,33 @@
+.btn {
+   font-size: 28px;
+   cursor: pointer;
+}
+
+.danger {
+   color: var(--danger);
+}
+
+.warning {
+   color: var(--warning);
+}
+
+.success {
+   color: var(--success);
+}
+
+.standard {
+   color: var(--primary);
+}
+
+.grey {
+   color: var(--neutral-grey);
+}
+
+.info {
+   color: var(--info);
+}
+
+.disabled {
+   opacity: 0.5;
+   pointer-events: none;
+}

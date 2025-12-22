@@ -1,0 +1,20 @@
+.container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+   width: 100%;
+   box-shadow: 0 0 10px 0 var(--neutral-grey);
+   padding: 20px;
+   border-radius: 10px;
+}
+
+.exerciseInfoWrapper {
+   flex: 1 0 auto;
+   display: flex;
+   flex-direction: column;
+}
+
+.completedExerciseName {
+   font-size: 24px;
+}

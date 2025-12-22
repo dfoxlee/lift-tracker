@@ -1,0 +1,33 @@
+.container {
+   width: 90vw;
+   max-width: 600px;
+   margin: 0 auto;
+   padding-bottom: 30px;
+}
+
+.settingsBtnWrapper {
+   position: fixed;
+   z-index: 10;
+   top: 20px;
+   right: 5vw;
+}
+
+.title {
+   text-align: center;
+   margin-top: 10px;
+}
+
+.linkWrapper {
+   display: flex;
+   justify-content: center;
+   margin: 20px 0 0;
+}
+
+.createWorkoutLink {
+   padding: 10px 20px;
+   background-color: var(--primary);
+   color: var(--secondary);
+   text-decoration: none;
+   border-radius: 5px;
+   text-align: center;
+}

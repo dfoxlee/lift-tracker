@@ -1,0 +1,92 @@
+.container {
+   position: fixed;
+   inset: 0;
+   background-color: rgba(0, 0, 0, 0.8);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 100;
+}
+
+.wrapper {
+   padding: 20px;
+   border-radius: 20px;
+   box-shadow: 0 0 10px 0 var(--neutral-grey);
+   width: 90vw;
+   max-width: 600px;
+   max-height: 80vh;
+   overflow-y: auto;
+   background-color: var(--secondary);
+}
+
+.workoutName {
+   text-align: center;
+   margin-top: 10px;
+   font-size: 32px;
+}
+
+.completedDate {
+   display: block;
+   text-align: center;
+   font-size: 18px;
+   color: var(--neutral-grey);
+}
+
+.exerciseSetsGrid {
+   display: grid;
+   grid-template-columns: 1fr 4fr 1fr 2fr;
+   gap: 10px 20px;
+   margin-top: 10px;
+   margin-bottom: 20px;
+   align-items: center;
+}
+
+.exercisesWrapper {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 30px;
+   margin-top: 20px;
+}
+
+.exerciseCard {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.exerciseName {
+   color: var(--primary);
+   font-size: 24px;
+   text-align: center;
+}
+
+.exerciseNotes {
+   text-align: center;
+   font-size: 14px;
+}
+
+.setTitle {
+   font-size: 14px;
+   font-weight: 500;
+   color: var(--neutral-grey);
+   text-align: center;
+}
+
+.setInfo {
+   text-align: center;
+}
+
+.checkWrapper {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.completedIcon {
+   color: var(--success);
+}
+
+.notCompletedIcon {
+   color: var(--neutral-grey);
+}
