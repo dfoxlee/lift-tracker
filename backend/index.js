@@ -15,7 +15,9 @@ import { loggingMiddleware } from "./middleware/logging-middleware.js";
 import logger from "./middleware/logging-middleware.js";
 import { apiLimiter } from "./middleware/rate-limit-middleware.js";
 
-dotenv.config();
+if (process.env.ENVIRONMENT !== "PRODUCTION") {
+   dotenv.config();
+}
 
 // express app
 const app = express();
@@ -31,7 +33,7 @@ if (process.env.ENVIRONMENT === "PRODUCTION") {
 // middleware
 app.use(cors());
 app.use(express.json());
-app.use(apiLimiter)
+app.use(apiLimiter);
 app.use(loggingMiddleware);
 
 // test routes
