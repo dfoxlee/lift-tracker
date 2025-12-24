@@ -12,15 +12,15 @@ const completedWorkoutsRouter = express.Router();
 
 completedWorkoutsRouter.get("/new/:workoutId", getNewCompletedWorkout);
 completedWorkoutsRouter.get("/:completedWorkoutId", getCompletedWorkout);
+completedWorkoutsRouter.delete(
+   "/:completedWorkoutId",
+   deleteCompletedWorkoutController
+);
 completedWorkoutsRouter.get("/", getUserWorkouts);
 completedWorkoutsRouter.post("/", createCompletedWorkoutController);
 completedWorkoutsRouter.patch(
    "/",
    updateCompletedWorkoutController
-);
-completedWorkoutsRouter.delete(
-   "/:completedWorkoutId",
-   deleteCompletedWorkoutController
 );
 
 export default completedWorkoutsRouter;
