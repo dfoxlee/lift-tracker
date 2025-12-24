@@ -53,7 +53,7 @@ app.use("/api/v1/completed-workouts", authMiddleware, completedWorkoutsRouter);
 app.use("/api/v1/completed-exercises", authMiddleware, completedExerciseRouter);
 
 if (process.env.ENVIRONMENT === "PRODUCTION") {
-   app.get("*", (req, res) => {
+   app.get("/*", (req, res) => {
       res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
    });
 }
