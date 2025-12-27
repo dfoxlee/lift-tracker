@@ -3,6 +3,14 @@ const baseUrl =
       ? import.meta.env.VITE_PRODUCTION_URL
       : import.meta.env.VITE_LOCAL_URL;
 
+// Debug logging - remove after fixing
+console.log('Environment variables:', {
+   VITE_ENVIRONMENT: import.meta.env.VITE_ENVIRONMENT,
+   VITE_PRODUCTION_URL: import.meta.env.VITE_PRODUCTION_URL,
+   VITE_LOCAL_URL: import.meta.env.VITE_LOCAL_URL,
+   baseUrl
+});
+
 export const fetchSignUpRequest = async ({
    email,
    password,
