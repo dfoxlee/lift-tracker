@@ -1,8 +1,6 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import path from "path";
-import { fileURLToPath } from "url";
 
 import usersRouter from "./routes/users.routes.js";
 import workoutsRouter from "./routes/workouts.routes.js";
@@ -19,14 +17,6 @@ dotenv.config();
 
 // express app
 const app = express();
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// serve static files in production
-if (process.env.ENVIRONMENT === "PRODUCTION") {
-   app.use(express.static(path.join(__dirname, "../frontend/dist")));
-}
 
 // middleware
 app.use(cors());
@@ -51,12 +41,6 @@ app.use("/api/v1/users", usersRouter);
 app.use("/api/v1/workouts", authMiddleware, workoutsRouter);
 app.use("/api/v1/completed-workouts", authMiddleware, completedWorkoutsRouter);
 app.use("/api/v1/completed-exercises", authMiddleware, completedExerciseRouter);
-
-if (process.env.ENVIRONMENT === "PRODUCTION") {
-   app.get(/(.*)/, (req, res) => {
-      res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
-   });
-}
 
 // error middleware
 app.use(errorMiddleware);
