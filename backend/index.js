@@ -15,9 +15,7 @@ import { loggingMiddleware } from "./middleware/logging-middleware.js";
 import logger from "./middleware/logging-middleware.js";
 import { apiLimiter } from "./middleware/rate-limit-middleware.js";
 
-if (process.env.ENVIRONMENT !== "PRODUCTION") {
-   dotenv.config();
-}
+dotenv.config();
 
 // express app
 const app = express();
@@ -37,10 +35,10 @@ app.use(apiLimiter);
 app.use(loggingMiddleware);
 
 // test routes
-app.get("/test", loggingMiddleware, (req, res) =>
+app.get("/api/v1/test", loggingMiddleware, (req, res) =>
    res.status(200).json("API is working properly")
 );
-app.get("/error", loggingMiddleware, (req, res, next) => {
+app.get("/api/v1/error", loggingMiddleware, (req, res, next) => {
    try {
       throw new Error("Test error handling middleware");
    } catch (error) {
