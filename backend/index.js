@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import path from "path";
+import { fileURLToPath } from "url";
 
 import usersRouter from "./routes/users.routes.js";
 import workoutsRouter from "./routes/workouts.routes.js";
