@@ -1,0 +1,60 @@
+name: lift-tracker
+region: nyc
+
+ingress:
+  rules:
+    - component: { name: backend }
+      match: { path: { prefix: /api/v1 } }
+    - component: { name: website }
+      cors:
+        allow_origins:
+          - prefix: https://lift-tracker.fit
+      match: { path: { prefix: / } }
+
+services:
+  - name: backend
+    environment_slug: node-js
+    github:
+      repo: dfoxlee/lift-tracker
+      branch: main
+      deploy_on_push: true
+    source_dir: backend
+    http_port: 8008
+    run_command: npm start
+    envs:
+      - key: NODE_ENV
+        value: production
+      - key: MYSQL_HOST
+        value: ${db.HOSTNAME}
+      - key: MYSQL_USER
+        value: ${db.USERNAME}
+      - key: MYSQL_PASSWORD
+        value: ${db.PASSWORD}
+        type: secret
+      - key: MYSQL_DATABASE
+        value: ${db.NAME}
+      - key: MYSQL_PORT
+        value: ${db.PORT}
+
+static_sites:
+  - name: website
+    environment_slug: static-sites
+    github:
+      repo: dfoxlee/lift-tracker
+      branch: main
+      deploy_on_push: true
+    source_dir: frontend
+    output_dir: dist
+    build_command: npm run build
+    envs:
+      - key: VITE_ENVIRONMENT
+        value: PRODUCTION
+        scope: BUILD_TIME
+      - key: VITE_PRODUCTION_URL
+        value: https://lift-tracker.fit/api/v1
+        scope: BUILD_TIME
+
+databases:
+  - name: db
+    engine: MYSQL
+    version: "8"
