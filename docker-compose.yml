@@ -1,0 +1,68 @@
+version: "3.8"
+
+services:
+  # MySQL Database
+  db:
+    image: mysql:8.0
+    container_name: lift-tracker-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    volumes:
+      - /mnt/volume_atl1_01/mysql:/var/lib/mysql
+      # Change the above path to match your volume's actual mount point
+      # Use the MOUNTPOINT from 'lsblk' output
+      - ./backend/db/db-initialization.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - lift-tracker-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+
+  # Backend API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: lift-tracker-backend
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - PORT=4004
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - JWT_SECRET=${JWT_SECRET}
+      - EMAIL_USER=${EMAIL_USER}
+      - EMAIL_PASS=${EMAIL_PASS}
+      - FRONTEND_URL=${FRONTEND_URL}
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - lift-tracker-network
+
+  # Frontend with Nginx
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: lift-tracker-frontend
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - backend
+    networks:
+      - lift-tracker-network
+    volumes:
+      - ./ssl:/etc/nginx/ssl:ro
+
+networks:
+  lift-tracker-network:
+    driver: bridge

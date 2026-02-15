@@ -28,7 +28,7 @@ app.use(loggingMiddleware);
 
 // test routes
 app.get("/api/v1/test", loggingMiddleware, (req, res) =>
-   res.status(200).json("API is working properly")
+   res.status(200).json("API is working properly"),
 );
 app.get("/api/v1/error", loggingMiddleware, (req, res, next) => {
    try {
@@ -45,16 +45,16 @@ app.use("/api/v1/completed-workouts", authMiddleware, completedWorkoutsRouter);
 app.use("/api/v1/completed-exercises", authMiddleware, completedExerciseRouter);
 
 // Get __dirname equivalent in ES modules
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Serve static files from frontend dist folder
-// app.use(express.static(path.join(__dirname, "../frontend/dist")));
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
 // Catch-all route: serve index.html for all non-API routes (SPA routing)
-// app.get("/{*any}", (req, res) => {
-//    res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
-// });
+app.get("/{*any}", (req, res) => {
+   res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
+});
 
 // error middleware
 app.use(errorMiddleware);
@@ -63,5 +63,5 @@ app.use(errorMiddleware);
 const PORT = process.env.PORT || 4004;
 
 app.listen(PORT, () =>
-   logger.info(`Server running on port: http://localhost:${PORT}`)
+   logger.info(`Server running on port: http://localhost:${PORT}`),
 );
