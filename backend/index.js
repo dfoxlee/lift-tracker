@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import path from "path";
+// import path from "path";
 // import { fileURLToPath } from "url";
 
 import usersRouter from "./routes/users.routes.js";
@@ -49,7 +49,7 @@ app.use("/api/v1/completed-exercises", authMiddleware, completedExerciseRouter);
 // const __dirname = path.dirname(__filename);
 
 // Serve static files from frontend dist folder
-app.use(express.static(path.join(__dirname, "../frontend/dist")));
+// app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
 // Catch-all route: serve index.html for all non-API routes (SPA routing)
 // app.get("/{*any}", (req, res) => {
