@@ -26,6 +26,8 @@ services:
       dockerfile: Dockerfile
     container_name: lift-tracker-backend
     restart: unless-stopped
+    ports:
+      - "4004:4004"
     environment:
       - NODE_ENV=production
       - PORT=4004
@@ -53,13 +55,10 @@ services:
     restart: unless-stopped
     ports:
       - "80:80"
-      - "443:443"
     depends_on:
       - backend
     networks:
       - lift-tracker-network
-    volumes:
-      - ./ssl:/etc/nginx/ssl:ro
 
 networks:
   lift-tracker-network:
