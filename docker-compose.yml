@@ -55,10 +55,13 @@ services:
     restart: unless-stopped
     ports:
       - "80:80"
+      - "443:443"
     depends_on:
       - backend
     networks:
       - lift-tracker-network
+    volumes:
+      - ./ssl:/etc/nginx/ssl:ro
 
 networks:
   lift-tracker-network:

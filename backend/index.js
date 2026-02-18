@@ -47,7 +47,8 @@ app.use(errorMiddleware);
 
 // server listening
 const PORT = process.env.PORT || 4004;
+const HOST = process.env.HOST || "0.0.0.0";
 
-app.listen(PORT, () =>
-   logger.info(`Server running on port: http://localhost:${PORT}`),
+app.listen(PORT, HOST, () =>
+   logger.info(`Server running on port: http://${HOST}:${PORT}`),
 );
